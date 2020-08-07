@@ -2,6 +2,7 @@
   <div id="app">
     <img width="25%" src="./assets/logo.png">
     <HelloWorld msg="Hello Vue in CodeSandbox!" />
+    <p>Lorem</p>
   </div>
 </template>
 
