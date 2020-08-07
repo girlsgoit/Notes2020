@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img width="25%" src="./assets/logo.png">
-    <HelloWorld msg="Hello GGIT in CodeSandbox!" />
+    <HelloWorld msg="Hello Vue in CodeSandbox!" />
+    <p>Lorem</p>
   </div>
 </template>
 
