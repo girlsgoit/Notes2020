@@ -1,18 +1,12 @@
 import Vue from "vue";
-import App from "./App.vue";
 import HelloWorld from "./components/HelloWorld";
+import App from "./App.vue";
 import VueRouter from "vue-router";
-import Dashboard from "./Dashboard";
-
 Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
 
-const routes = [
-  { path: "/", component: HelloWorld },
-  { path: "/dashboard", component: Dashboard },
-  { path: "/notes/:id", component: Notes}
-];
+const routes = [{ path: "/", component: HelloWorld }];
 
 const router = new VueRouter({
   mode: "history",
