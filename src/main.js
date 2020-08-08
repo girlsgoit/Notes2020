@@ -4,6 +4,8 @@ import HelloWorld from "./components/HelloWorld.vue";
 import App from "./App.vue";
 import Login from "./Login.vue";
 import Register from "./Register.vue";
+import Dashboard from "./Dashboard";
+import Notes from "./Notes";
 
 Vue.config.productionTip = false;
 
@@ -12,7 +14,9 @@ Vue.use(VueRouter);
 const routes = [
   { path: "/", component: HelloWorld },
   { path: "/login", component: Login },
-  { path: "/register", component: Register }
+  { path: "/register", component: Register },
+  { path: "/dashboard", component: Dashboard },
+  { path: "/notes/:id", component: Notes }
 ];
 
 const router = new VueRouter({
