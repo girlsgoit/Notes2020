@@ -7,15 +7,19 @@ import Register from "./Register.vue";
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
-const routes = [
-  { path: "/login", component: Login },
-  { path: "/register", component: Register }
-];
-
 const router = new VueRouter({
   mode: "history", // ne ajuta sa avem URL mai curate (fara #)
   routes: routes
 });
+
+const routes = [{ path: "/", component: HelloWorld }, { path: "/login", component: Login },
+  { path: "/register", component: Register }];
+
+const router = new VueRouter({
+  mode: "history",
+  routes: routes
+});
+
 new Vue({
   render: (h) => h(App),
   router
