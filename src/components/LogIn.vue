@@ -58,7 +58,6 @@ export default {
               localStorage.setItem("NOTES_AUTH", response.data.token);
               localStorage.setItem("username", response.data.username);
               that.$router.push({ path: "/dashboard" });
-              sync;
             }
 
             console.log(response);
