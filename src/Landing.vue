@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <h1>Notes page</h1>
+    <h1>Landing page</h1>
   </div>
 </template>
 
@@ -9,12 +9,12 @@
 import Header from "./components/Header";
 
 export default {
-  name: "Notes",
+  name: "Landing",
   components: {
     Header
   }
 };
 </script>
 
-<style>
-<style>
+<style scoped>
+</style>

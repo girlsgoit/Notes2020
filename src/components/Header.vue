@@ -1,15 +1,12 @@
 <template>
-  <div>
-    <h1>Login</h1>
-  </div>
+  <h1>Header component</h1>
 </template>
 
 <script>
-
 export default {
-  name: "Login"
+  name: "Header"
 };
 </script>
 
-<style>
+<style scoped>
 </style>

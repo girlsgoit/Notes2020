@@ -6,6 +6,7 @@ import Login from "./Login.vue";
 import Register from "./Register.vue";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
+import Landing from "./Landing";
 
 Vue.config.productionTip = false;
 
@@ -16,7 +17,8 @@ const routes = [
   { path: "/login", component: Login },
   { path: "/register", component: Register },
   { path: "/dashboard", component: Dashboard },
-  { path: "/notes/:id", component: Notes }
+  { path: "/notes/:id", component: Notes },
+  {path: "/landing", component: Landing}
 ];
 
 const router = new VueRouter({
