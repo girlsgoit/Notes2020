@@ -1,0 +1,113 @@
+<template>
+  <div>
+    <header class="header-style">
+      <div class="header-text">
+        <div class="log-in">
+          <router-link to="/login" class="link" href="login.html">Login</router-link>
+        </div>
+
+        <div class="logo">
+          <a href="index.html">
+            <img src="/assets/logo.svg" alt="Logo">
+          </a>
+        </div>
+
+        <div class="register">
+          <router-link to="/register" class="link" href="register.html">Register</router-link>
+        </div>
+      </div>
+    </header>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Header"
+};
+</script>
+
+<style scopped>
+.header-style {
+  padding: 30px 0;
+  background: #ffffff;
+  box-shadow: 0px 0px 27px rgba(230, 230, 230, 0.5);
+}
+.header-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 960px;
+  color: #393939;
+}
+
+.link {
+  text-decoration: none;
+  color: #393939;
+  text-transform: uppercase;
+}
+.nav-links ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+.nav-links a {
+  margin-left: 40px;
+}
+.nav-links ul li:first-child a {
+  margin-left: 0px;
+}
+a:hover {
+  color: #050505;
+}
+.logo {
+  height: 42px;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo,
+  .link,
+  .nav-links {
+    width: 100%;
+  }
+  .logo {
+    order: -1;
+  }
+  .nav-links ul {
+    justify-content: center;
+  }
+
+  .logo {
+    margin-bottom: 30px;
+  }
+
+  .link {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-links ul li a {
+    margin: 5px 0;
+  }
+}
+</style>
+
