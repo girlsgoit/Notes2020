@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img width="25%" src="./assets/logo.png">
+    <Header></Header>
     <router-view></router-view>
 
     <p>Lorem</p>
@@ -8,9 +9,12 @@
 </template>
 
 <script>
+import Header from "./components/Header";
 export default {
   name: "App",
-  components: {}
+  components: {
+    Header
+  }
 };
 </script>
 

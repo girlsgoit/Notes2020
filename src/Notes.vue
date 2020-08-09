@@ -1,10 +1,15 @@
 <template>
-<h1>Notes page</h1>
+  <div>
+    <h1>Notes page</h1>
+  </div>
 </template>
 
 <script>
+
 export default {
-  name: "Notes"
+  name: "Notes",
+  components: {
+  }
 };
 </script>
 

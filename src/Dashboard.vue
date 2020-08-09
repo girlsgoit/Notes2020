@@ -1,10 +1,13 @@
 <template>
-  <h1>Hello</h1>
+  <div>
+    <h1>Hello</h1>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Dashboard"
+  name: "Dashboard",
+  components: {}
 };
 </script>
 
