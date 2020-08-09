@@ -1,6 +1,5 @@
 {
-  "name": "dashboard1",
-
+  "name": "notes",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -40,5 +39,5 @@
   },
   "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "keywords": [],
-  "description": ""
+  "description": "rutele si componenete empty"
 }
