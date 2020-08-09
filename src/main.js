@@ -16,7 +16,8 @@ const routes = [
   { path: "/login", component: Login },
   { path: "/register", component: Register },
   { path: "/dashboard", component: Dashboard },
-  { path: "/notes/:id", component: Notes }
+  { path: "/notes/:id", component: Notes },
+  { path: "/new-notes", component: Notes }
 ];
 
 const router = new VueRouter({
