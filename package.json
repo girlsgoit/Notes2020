@@ -1,5 +1,6 @@
 {
   "name": "notes",
+
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -46,5 +47,5 @@
     "not ie <= 8"
   ],
   "keywords": [],
-  "description": ""
+  "description": "rutele si componenete empty"
 }
