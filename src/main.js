@@ -6,9 +6,24 @@ import Login from "./Login.vue";
 import Register from "./Register.vue";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
+import Axios from "axios";
 
 Vue.config.productionTip = false;
 
+Axios.interceptors.request.use(
+  function (config) {
+    const token = localStorage.getItem("NOTES_AUTH");
+
+    if (token) {
+      config.headers["Authorization"] = "Token " + token;
+    }
+
+    return config;
+  },
+  function (error) {
+    console.log(error);
+  }
+);
 Vue.use(VueRouter);
 
 const routes = [
