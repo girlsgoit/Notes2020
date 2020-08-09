@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png" />
+    
     <router-view></router-view>
 
-    <p>Lorem</p>
+    
   </div>
 </template>
 

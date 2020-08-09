@@ -1,5 +1,5 @@
 {
-  "name": "global-interceptor",
+  "name": "login",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -46,5 +46,5 @@
     "not ie <= 8"
   ],
   "keywords": [],
-  "description": "rutele si componenete empty"
+  "description": ""
 }
