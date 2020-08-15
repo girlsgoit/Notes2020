@@ -12,7 +12,7 @@
 import axios from "axios";
 export default {
   name: "Notes",
-  data: function() {
+  data: function () {
     return {
       noteId: null,
       verificare: true
@@ -22,17 +22,17 @@ export default {
     this.noteId = this.$route.params.id;
   },
   methods: {
-    onDeleteNote: function() {
+    onDeleteNote: function () {
       console.log("dhedj");
       const that = this;
 
       axios
         .delete("https://notes-api.girlsgoit.org/notes/" + that.noteId + "/")
-        .then(function(response) {
+        .then(function (response) {
           console.log(response);
           console.log("nu mergeee");
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
           console.log("error");
         });

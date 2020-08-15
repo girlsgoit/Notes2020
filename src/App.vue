@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <HeaderLogIn :user="user" v-if="token"/>
+    <HeaderLogIn :user="user" v-if="token" />
     <router-view></router-view>
-    <Footer v-if="token"/>
+    <Footer v-if="token" />
   </div>
 </template>
 
