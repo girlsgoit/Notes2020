@@ -2,7 +2,7 @@
   <div id="app">
     <HeaderLogIn :user="user" v-if="token" />
     <router-view></router-view>
-    <Footer />
+    <Footer v-if="token" />
   </div>
 </template>
 
