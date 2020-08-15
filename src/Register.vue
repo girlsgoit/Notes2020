@@ -1,8 +1,9 @@
 <template>
   <div>
     <div class="register">
-      <img class="logo" src="/assets/logo.svg">
-
+      <div class="logo">
+        <img src="/assets/logo.svg">
+      </div>
       <input type="text" placeholder="Username" name="username" v-model="input.username">
 
       <input type="text" placeholder="Full Name" v-model="input.fullName">
@@ -15,8 +16,10 @@
       >
       <p v-if="registerComplete">Your registration was successfully completed !</p>
       <p v-if="registerComplete">Log in and enjoy Notes!</p>
-      <button class="register-button" @click="onRegister">Register</button>
-      <button class="login-button" v-on:click="goToLogin()">Log In</button>
+      <div class="buttons">
+        <button class="register-button" @click="onRegister">Register</button>
+        <button class="login-button" v-on:click="goToLogin()">Log In</button>
+      </div>
     </div>
   </div>
 </template>
@@ -82,22 +85,24 @@ export default {
 <style scoped>
 .register {
   max-width: 350px;
-  border-radius: 20px;
-  border: 1.5px solid #4567ff;
+  border-radius: 10px;
+  border: 1px solid #4567ff;
   background: white;
   box-sizing: border-box;
   padding: 30px;
   box-shadow: 5px 10px #bccacc;
-  margin: 0 auto;
-  margin-top: 150px;
-  margin-bottom: 50px;
+  margin: 150px auto 50px;
 }
 
 .register h2 {
-  font-family: Lobster;
   text-align: center;
   color: #1b81e0;
   font-size: 40px;
+}
+
+.register .logo {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 input[type="text"],
@@ -105,11 +110,18 @@ input[type="password"] {
   width: 100%;
   margin: 7px auto;
   box-sizing: border-box;
-  border-radius: 15px;
-  padding: 12px 5px;
+  border-radius: 5px;
+  padding: 12px 15px;
   outline: none;
   border: 1px solid #666666;
   color: black;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .register-button,
@@ -120,9 +132,7 @@ input[type="password"] {
 .register-button {
   display: inline-block;
   font-size: 17px;
-  padding: 10px;
-  margin-top: 20px;
-  margin-left: 45px;
+  padding: 10px 20px;
   text-decoration: none;
   outline: none;
   border: none;
@@ -135,10 +145,7 @@ input[type="password"] {
 .login-button {
   display: inline-block;
   font-size: 17px;
-  padding: 10px;
-  margin-top: 20px;
-  margin-left: 45px;
-  margin-right: 30px;
+  padding: 10px 20px;
   text-decoration: none;
   outline: none;
   border: none;
@@ -148,12 +155,11 @@ input[type="password"] {
   transition: 0.5s;
 }
 
-a.register-button:hover {
+.register-button:hover {
   background-color: #64b4fa;
 }
 
-a.login-button:hover {
-  background-color: #1b81e0;
-  color: white;
+.login-button:hover {
+  color: #64b4fa;
 }
 </style>

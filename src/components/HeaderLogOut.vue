@@ -6,7 +6,7 @@
       </div>
 
       <div class="logo">
-        <router-link to="/dashboard">
+        <router-link to="/">
           <img src="/assets/logo.svg" alt="Logo" />
         </router-link>
       </div>
