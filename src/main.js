@@ -22,8 +22,17 @@ function loginGuard(from, to, next) {
   }
 }
 
+function goToDashboard(from, to, next) {
+  const token = localStorage.getItem("NOTES_AUTH");
+  if (token) {
+    next("/dashboard");
+  } else {
+    next();
+  }
+}
+
 const routes = [
-  { path: "/", component: Landing },
+  { path: "/", component: Landing, beforeEnter: goToDashboard },
   { path: "/login", component: LogIn },
   { path: "/register", component: Register },
   { path: "/dashboard", component: Dashboard, beforeEnter: loginGuard },
