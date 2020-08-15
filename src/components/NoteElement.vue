@@ -6,7 +6,7 @@
     <p v-if="tag === 'p'">{{value}}</p>
     <a v-if="tag === 'a'" :href="value">{{value}}</a>
     <div class="photo" v-if="tag === 'img'">
-      <img :src="value">
+      <img :src="value" alt="photo">
     </div>
     <ul v-if="tag === 'ul'">
       <li v-for="(ulElement, index)  in ulElements" :key="index">{{ulElement}}</li>
@@ -40,6 +40,12 @@ export default {
 .photo img {
   max-width: 960px;
   width: 100%;
+}
+
+.card .photo img {
+  max-height: 25rem;
+  object-fit: cover;
+  object-position: center;
 }
 
 a {

@@ -10,8 +10,8 @@
             :key="element.id"
         >
           <NoteElement
-              :tag="element.note_elements[0].tag"
-              :value="element.note_elements[0].content"
+              :tag="element.note_elements[3].tag"
+              :value="element.note_elements[3].content"
           />
           <p class="date">{{ element.created_at }}</p>
         </div>
@@ -111,6 +111,12 @@ export default {
   box-shadow: 0 0 27px rgba(230, 230, 230, 0.5);
 
   overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0 40px rgba(230, 230, 230, 0.85);
 }
 
 .date {
