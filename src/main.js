@@ -25,6 +25,7 @@ Axios.interceptors.request.use(
 Vue.use(VueRouter);
 
 const routes = [
+  { path: "/", component: HelloWorld },
   { path: "/login", component: LogIn },
   { path: "/dashboard", component: Dashboard },
   { path: "/notes/:id", component: Notes },
