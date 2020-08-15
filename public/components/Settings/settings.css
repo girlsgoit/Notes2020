@@ -1,0 +1,91 @@
+.settings_bar {
+  background: #f2f2f2;
+  padding: 15px 50px;
+  vertical-align: middle;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+@media screen and (max-width: 500px) {
+  .column {
+    flex: 50%;
+  }
+}
+.bar-change_settings {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+.bar_dashboard .name {
+  display: inline-block;
+  font-family: "Roboto";
+  color: black;
+  font-size: 40px;
+  font-weight: normal;
+  font-style: normal;
+}
+.bar_dashboard .button {
+  float: right;
+  background: #2ea1f8;
+  margin: 25px 10px 25px 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: "Roboto";
+  font-size: 16px;
+  border-radius: 5px;
+  line-height: 28px;
+  color: #ffffff;
+  width: 160px;
+  border: none;
+  cursor: pointer;
+}
+.bar_dashboard .button:hover {
+  background-color: #4ab1ff;
+  border: none;
+}
+.bar_dashboard .button:focus {
+  outline: none;
+  background-color: #67bdff;
+}
+
+.bar-inputs inputs {
+  display: inline-block;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+}
+.bar-inputs .custom {
+  flex: 0 0 299px;
+  max-width: 299px;
+}
+.bar-inputs textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  resize: none;
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 25px;
+  flex: 1 0 auto;
+}
+.bar-inputs .custom input {
+  height: 66px;
+  width: 300px;
+  background: #ffffff;
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding-left: 25px;
+}
+.bar-inputs .custom input:focus {
+  outline: none;
+}
+
+.custom {
+  font-family: Roboto;
+  font-size: 16px;
+}
