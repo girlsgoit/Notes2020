@@ -1,10 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import App from "./App.vue"
-import LogIn from "./components/LogIn.vue";
-import Register from "./Register.vue";
+import App from "./App.vue";
+import LogIn from "./components/LogIn";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
+import Register from "./Register";
+import Landing from "./Landing";
 import Axios from "axios";
 
 Vue.config.productionTip = false;
@@ -26,7 +27,7 @@ Axios.interceptors.request.use(
 Vue.use(VueRouter);
 
 const routes = [
-
+  { path: "/", component: Landing },
   { path: "/login", component: LogIn },
   { path: "/register", component: Register },
   { path: "/dashboard", component: Dashboard },

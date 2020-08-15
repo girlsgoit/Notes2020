@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <HeaderLogIn :user="user" v-if="token"/>
+    <HeaderLogIn v-if="token" :user="user"/>
+    <HeaderLogOut v-else/>
+
     <router-view></router-view>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import HeaderLogIn from "./components/HeaderLogIn";
-
+import HeaderLogOut from "./components/HeaderLogOut";
+import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
-    HeaderLogIn
+    HeaderLogIn,
+    HeaderLogOut,
+    Footer
   },
   data() {
     return {
@@ -20,16 +26,21 @@ export default {
     };
   },
   created() {
-    this.token = localStorage.getItem("NOTES_AUTH");
+    this.$on("auth", this.updateUserData);
+    this.updateUserData();
+  },
+  methods: {
+    updateUserData: function() {
+      console.log("here");
+      this.token = localStorage.getItem("NOTES_AUTH");
 
-    if (this.token) {
-      this.user = {
-        username: localStorage.getItem("USER_NAME"),
-        fullName: localStorage.getItem("FULL_NAME"),
-        id: localStorage.getItem("USER_ID")
-      };
-
-      console.log(this.user);
+      if (this.token) {
+        this.user = {
+          username: localStorage.getItem("USER_NAME"),
+          fullName: localStorage.getItem("FULL_NAME"),
+          id: localStorage.getItem("USER_ID")
+        };
+      }
     }
   }
 };
@@ -42,5 +53,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 </style>

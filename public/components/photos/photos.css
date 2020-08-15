@@ -1,0 +1,29 @@
+.grid_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+
+.grid_container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: all 0.2s ease-in;
+}
+
+.grid_container img:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+  .grid_container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media screen and (max-width: 900px) {
+  .grid_container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}

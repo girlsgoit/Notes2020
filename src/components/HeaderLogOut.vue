@@ -1,19 +1,17 @@
-
 <template>
   <header class="header-style">
     <div class="header-text">
       <div class="log-in">
-        <a class="link" href="login.html">Login</a>
+        <router-link to="/login" class="link">Login</router-link>
       </div>
 
       <div class="logo">
-        <a href="index.html">
-          <img src="/assets/logo.svg" alt="Logo">
-        </a>
+        <router-link to="/dashboard">
+          <img src="/assets/logo.svg" alt="Logo" />
+        </router-link>
       </div>
-
       <div class="register">
-        <a class="link" href="register.html">Register</a>
+        <router-link to="/register" class="link">Register</router-link>
       </div>
     </div>
   </header>
