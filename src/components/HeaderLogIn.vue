@@ -2,7 +2,7 @@
   <header class="header-style">
     <div class="header-text">
       <div class="name">
-        <span class="link">{{user.fullName || user.username}}</span>
+        <span class="link">{{ user.fullName || user.username }}</span>
       </div>
 
       <div class="logo">
@@ -46,8 +46,9 @@ export default {
 .header-style {
   padding: 30px 0;
   background: #ffffff;
-  box-shadow: 0px 0px 27px rgba(230, 230, 230, 0.5);
+  box-shadow: 0 0 27px rgba(230, 230, 230, 0.5);
 }
+
 .header-text {
   display: flex;
   justify-content: space-between;
@@ -58,6 +59,7 @@ export default {
   padding: 0 30px;
   max-width: 960px;
   color: #393939;
+  position: relative;
 }
 
 .link {
@@ -69,6 +71,7 @@ export default {
   cursor: pointer;
   display: block;
 }
+
 .nav-links ul {
   list-style-type: none;
   display: flex;
@@ -79,19 +82,29 @@ export default {
   align-items: center;
   margin-left: 0px;
 }
+
 .nav-links .link {
   margin-left: 40px;
 }
+
 .nav-links ul li:first-child .link {
   margin-left: 0px;
 }
+
 a:hover {
   color: #050505;
 }
+
 .logo {
-  height: 42px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
 }
 
 @media screen and (max-width: 900px) {
@@ -99,16 +112,19 @@ a:hover {
     display: flex;
     flex-direction: column;
   }
+
   .logo,
   .link,
   .nav-links {
     width: 100%;
     justify-content: center;
   }
+
   .logo {
     order: -1;
     margin-bottom: 30px;
   }
+
   .nav-links ul {
     justify-content: center;
   }
@@ -129,6 +145,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
   }
+
   .nav-links ul li a {
     margin: 5px 0;
   }

@@ -2,7 +2,7 @@
   <header class="header-style">
     <div class="header-text">
       <div class="log-in">
-        <router-link to="/login">Login</router-link>
+        <router-link to="/login" class="link">Login</router-link>
       </div>
 
       <div class="logo">

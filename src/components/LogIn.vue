@@ -1,9 +1,6 @@
 <template>
   <div class="login-card">
-    <img
-      class="logo"
-      src="https://s3-alpha-sig.figma.com/img/eb24/ca1c/6b46f3629797526e406626fc13be7290?Expires=1597622400&Signature=SX5MRkeXwQWPZ1MpDbbd-niUIsiEgrQk7BsW8iwj1RVj~QxlTWHRqw66e5AkZWPD-DElxe1bgVSuU4NEykSlTaa6N-YwQuGEt~NKPHYd-YBQDATFV5Y-JwO8dMBH~gQ6xTZQdYpOssiZZJgOLgXnUChwLU-rO4RNAofeYrcU4n11ybICxJOlXrBTk-YqDOhl1ITDghO37-s2GH~P-jjlNzGUOXiomRtsqAMF5SPEK8yykxW59CoL9krPH5UeFngyNN3oAQN5pGp8~m2mJOKnX9xuRUE2pckqfkhcdB7waVPvwO8Vn1dYBvGStWdCd~hcMRP0z7aOObVuHrikcw3qRg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-    >
+    <img class="logo" src="/assets/logo.svg">
     <input type="text" name="username" placeholder="Username" v-model="input.username">
     <input type="password" name="password" v-model="input.password" placeholder="Password">
     <div class="buttons">

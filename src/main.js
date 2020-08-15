@@ -4,11 +4,38 @@ import App from "./App.vue";
 import LogIn from "./components/LogIn";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
-import Axios from "axios";
 import Register from "./Register";
-import Landing from "./Landings";
+import Landing from "./Landing";
+import Axios from "axios";
 
 Vue.config.productionTip = false;
+
+Vue.use(VueRouter);
+
+function loginGuard(from, to, next) {
+  console.log("guarding!");
+  const token = localStorage.getItem("NOTES_AUTH");
+  if (token) {
+    next();
+  } else {
+    next("/login");
+  }
+}
+
+const routes = [
+  { path: "/", component: Landing },
+  { path: "/login", component: LogIn },
+  { path: "/register", component: Register },
+  { path: "/dashboard", component: Dashboard, beforeEnter: loginGuard },
+  { path: "/notes/:id", component: Notes, beforeEnter: loginGuard },
+  { path: "/new-notes", component: Notes, beforeEnter: loginGuard },
+  { path: "*", component: Landing }
+];
+
+const router = new VueRouter({
+  mode: "history",
+  routes: routes
+});
 
 Axios.interceptors.request.use(
   function (config) {
@@ -16,6 +43,8 @@ Axios.interceptors.request.use(
 
     if (token) {
       config.headers["Authorization"] = "Token " + token;
+    } else {
+      router.push("/login");
     }
 
     return config;
@@ -24,21 +53,6 @@ Axios.interceptors.request.use(
     console.log(error);
   }
 );
-Vue.use(VueRouter);
-
-const routes = [
-  { path: "/", component: Landing },
-  { path: "/login", component: LogIn },
-  { path: "/register", component: Register },
-  { path: "/dashboard", component: Dashboard },
-  { path: "/notes/:id", component: Notes },
-  { path: "/new-notes", component: Notes }
-];
-
-const router = new VueRouter({
-  mode: "history",
-  routes: routes
-});
 
 new Vue({
   render: (h) => h(App),
