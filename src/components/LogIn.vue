@@ -56,8 +56,8 @@ export default {
                   localStorage.setItem("USER_ID", user.id);
                   localStorage.setItem("FULL_NAME", user.full_name);
 
+                  that.$parent.$emit("auth");
                   that.$router.push({ path: "/dashboard" });
-                  window.location.reload();
                 });
             }
 

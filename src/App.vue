@@ -26,14 +26,21 @@ export default {
     };
   },
   created() {
-    this.token = localStorage.getItem("NOTES_AUTH");
+    this.$on("auth", this.updateUserData);
+    this.updateUserData();
+  },
+  methods: {
+    updateUserData: function() {
+      console.log("here");
+      this.token = localStorage.getItem("NOTES_AUTH");
 
-    if (this.token) {
-      this.user = {
-        username: localStorage.getItem("USER_NAME"),
-        fullName: localStorage.getItem("FULL_NAME"),
-        id: localStorage.getItem("USER_ID")
-      };
+      if (this.token) {
+        this.user = {
+          username: localStorage.getItem("USER_NAME"),
+          fullName: localStorage.getItem("FULL_NAME"),
+          id: localStorage.getItem("USER_ID")
+        };
+      }
     }
   }
 };
