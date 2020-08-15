@@ -2,17 +2,50 @@
   <div class="note">
     <div class="container-note">
       <div v-for="(noteElement, index) in noteElements" :key="index">
-        <h1 v-if="noteElement.tag === 'h1'" class="header">{{ noteElement.content }}</h1>
-        <h2 v-if="noteElement.tag === 'h2'" class="header2">{{ noteElement.content }}</h2>
-        <h3 v-if="noteElement.tag === 'h3'" class="header3">{{ noteElement.content }}</h3>
-        <p v-if="noteElement.tag === 'p'" class="paragraph">{{ noteElement.content }}</p>
-        <a v-if="noteElement.tag === 'a'">{{ noteElement.content }}</a>
-        <ul v-if="noteElement.tag === 'ul'" class="list">
-          <li v-for="item in noteElement" :key="item">{{ item }}</li>
-        </ul>
-        <img v-if="noteElement.tag === 'img'" :src="noteElement.content">
+        <ButtonNewElement
+          @newElement="newElementAt(index)"
+          :isActive="currentIndex === index && isEditorVisible"
+        />
+
+        <div @click="hideEditor">
+          <h1 v-if="noteElement.tag === 'h1'" class="header">
+            {{ noteElement.content }}
+          </h1>
+          <h2 v-if="noteElement.tag === 'h2'" class="header2">
+            {{ noteElement.content }}
+          </h2>
+          <h3 v-if="noteElement.tag === 'h3'" class="header3">
+            {{ noteElement.content }}
+          </h3>
+          <p v-if="noteElement.tag === 'p'" class="paragraph">
+            {{ noteElement.content }}
+          </p>
+          <a v-if="noteElement.tag === 'a'" :href="noteElement.content">{{
+            noteElement.content
+          }}</a>
+          <ul v-if="noteElement.tag === 'ul'" class="list">
+            <li v-for="item in noteElement.content.split(',')" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+          <img v-if="noteElement.tag === 'img'" :src="noteElement.content" />
+        </div>
       </div>
+
+      <ButtonNewElement
+        @newElement="newElementAt(noteElements.length)"
+        :isActive="currentIndex === noteElements.length && isEditorVisible"
+      />
     </div>
+
+    <AddElement
+      :isVisible="isEditorVisible"
+      :blocks="noteElements"
+      :index="currentIndex"
+      :id="noteId"
+      @blockAdded="noteElements = $event"
+      @indexAdded="currentIndex = $event"
+    />
 
     <div class="delete-button-container">
       <button class="delete-button" @click="onDeleteNote">Delete Note</button>
@@ -22,14 +55,21 @@
 
 <script>
 import axios from "axios";
+import AddElement from "./components/AddElement";
+import ButtonNewElement from "./components/ButtonNewElement";
 
 export default {
   name: "Notes",
-
-  data: function() {
+  components: {
+    AddElement,
+    ButtonNewElement
+  },
+  data: function () {
     return {
       noteElements: [],
-      noteId: null
+      noteId: null,
+      currentIndex: 0,
+      isEditorVisible: false
     };
   },
   created() {
@@ -38,23 +78,30 @@ export default {
     const url = "https://notes-api.girlsgoit.org/notes/" + this.noteId;
     axios
       .get(url)
-      .then(function(response) {
+      .then(function (response) {
         that.noteElements = response.data.note_elements;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   },
   methods: {
-    onDeleteNote: function() {
+    newElementAt: function (index) {
+      this.currentIndex = index;
+      this.isEditorVisible = true;
+    },
+    hideEditor: function () {
+      this.isEditorVisible = false;
+    },
+    onDeleteNote: function () {
       const that = this;
 
       axios
         .delete("https://notes-api.girlsgoit.org/notes/" + that.noteId + "/")
-        .then(function() {
+        .then(function () {
           that.$router.push({ path: "/dashboard" });
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     }

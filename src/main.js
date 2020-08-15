@@ -48,9 +48,8 @@ const router = new VueRouter({
   routes: routes
 });
 
-
 Axios.interceptors.request.use(
-  function(config) {
+  function (config) {
     const token = localStorage.getItem("NOTES_AUTH");
 
     if (token) {
@@ -59,7 +58,7 @@ Axios.interceptors.request.use(
 
     return config;
   },
-  function(error) {
+  function (error) {
     console.log(error);
   }
 );
