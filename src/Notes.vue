@@ -22,10 +22,13 @@
 
 <script>
 import axios from "axios";
+import AddElement from "./components/AddElement";
 
 export default {
   name: "Notes",
-
+  components: {
+    AddElement
+  },
   data: function() {
     return {
       noteElements: [],
