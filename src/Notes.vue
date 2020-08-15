@@ -23,18 +23,15 @@ export default {
   },
   methods: {
     onDeleteNote: function () {
-      console.log("dhedj");
       const that = this;
 
       axios
         .delete("https://notes-api.girlsgoit.org/notes/" + that.noteId + "/")
         .then(function (response) {
-          console.log(response);
-          console.log("nu mergeee");
+          that.$router.push({ path: "/dashboard" });
         })
         .catch(function (error) {
           console.log(error);
-          console.log("error");
         });
     }
   }
