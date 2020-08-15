@@ -4,9 +4,9 @@ import App from "./App.vue";
 import LogIn from "./components/LogIn";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
+import Axios from "axios";
 import Register from "./Register";
 import Landing from "./Landing";
-import Axios from "axios";
 
 Vue.config.productionTip = false;
 
