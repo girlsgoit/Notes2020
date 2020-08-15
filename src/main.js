@@ -14,7 +14,6 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
 function loginGuard(from, to, next) {
-  console.log("guarding!");
   const token = localStorage.getItem("NOTES_AUTH");
   if (token) {
     next();
@@ -47,8 +46,6 @@ Axios.interceptors.request.use(
 
     if (token) {
       config.headers["Authorization"] = "Token " + token;
-    } else {
-      router.push("/login");
     }
 
     return config;
