@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
-import App from "./App.vue";
+import App from "./App.vue"
 import LogIn from "./components/LogIn.vue";
 import Register from "./Register.vue";
 import Dashboard from "./Dashboard";
@@ -27,7 +26,7 @@ Axios.interceptors.request.use(
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/", component: HelloWorld },
+
   { path: "/login", component: LogIn },
   { path: "/register", component: Register },
   { path: "/dashboard", component: Dashboard },
