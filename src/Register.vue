@@ -60,7 +60,7 @@ export default {
 
         axios
           .post("https://notes-api.girlsgoit.org/users/", data)
-          .then(function(response) {
+          .then(function() {
             console.log("mergeee");
             that.input.username = that.input.fullName = that.input.password = that.input.confirmPassword =
               "";
