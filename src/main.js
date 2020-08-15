@@ -4,6 +4,7 @@ import App from "./App.vue";
 import LogIn from "./components/LogIn";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
+import Register from "./Register";
 import Landing from "./Landing";
 import Axios from "axios";
 
@@ -28,6 +29,7 @@ Vue.use(VueRouter);
 const routes = [
   { path: "/", component: Landing },
   { path: "/login", component: LogIn },
+  { path: "/register", component: Register },
   { path: "/dashboard", component: Dashboard },
   { path: "/notes/:id", component: Notes },
   { path: "/new-notes", component: Notes }
