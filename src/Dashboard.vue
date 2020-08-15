@@ -3,14 +3,16 @@
   <Toolbar></Toolbar>
   <section class="cards-section">
     <div class="column">
-      <div class="card" v-for="element in left_column_elements" :key="element.id">
+      <div class="card" @click="goToNote(element.id)" v-for="element in left_column_elements" :key="element.id">
         <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
+        <p class="date">15 august</p>
       </div>
     </div>
 
     <div class="column">
-      <div class="card" v-for="element in right_column_elements" :key="element.id">
+      <div class="card" @click="goToNote(element.id)" v-for="element in right_column_elements" :key="element.id">
         <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
+        <p class="date">15 august</p>
       </div>
     </div>
   </section>
@@ -37,8 +39,9 @@ export default {
   created() {
     const that = this;
 
-    axios.get("/notes/").then(function(response) {
+    axios.get("https://notes-api.girlsgoit.org/notes/").then(function(response) {
       that.notes = response.data;
+      console.log(response);
 
       for (let index = 0; index < that.notes.length; index++) {
         if (index % 2 === 0) {
@@ -50,7 +53,9 @@ export default {
     });
   },
   methods: {
-    goToNote(noteId) {}
+    goToNote(noteId) {
+      this.$router.push(`/notes/${noteId}`)
+    }
   }
 };
 </script>
@@ -89,10 +94,5 @@ export default {
 .date {
   text-align: right;
   color: #919191;
-}
-
-.card a {
-  text-decoration: none;
-  color: #1b81e0;
 }
 </style>
