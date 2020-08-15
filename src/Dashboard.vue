@@ -1,19 +1,19 @@
 <template>
-<div>
-  <Toolbar></Toolbar>
-  <section class="cards-section">
-    <div class="column">
-      <div class="card" v-for="element in left_column_elements" :key="element.id">
-        <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
+  <div>
+    <Toolbar></Toolbar>
+    <section class="cards-section">
+      <div class="column">
+        <div class="card" v-for="element in left_column_elements" :key="element.id">
+          <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
+        </div>
       </div>
-    </div>
 
-    <div class="column">
-      <div class="card" v-for="element in right_column_elements" :key="element.id">
-        <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
+      <div class="column">
+        <div class="card" v-for="element in right_column_elements" :key="element.id">
+          <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   </div>
 </template>
 
@@ -21,6 +21,7 @@
 import Toolbar from "./components/Toolbar";
 import NoteElement from "./components/NoteElement";
 import axios from "axios";
+
 export default {
   name: "Dashboard",
   components: {
@@ -50,7 +51,9 @@ export default {
     });
   },
   methods: {
-    goToNote(noteId) {}
+    goToNote(noteId) {
+      console.log(noteId);
+    }
   }
 };
 </script>
