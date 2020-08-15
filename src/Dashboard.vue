@@ -10,8 +10,8 @@
             :key="element.id"
         >
           <NoteElement
-              :tag="element.note_elements[3].tag"
-              :value="element.note_elements[3].content"
+              :tag="element.note_elements[0].tag"
+              :value="element.note_elements[0].content"
           />
           <p class="date">{{ element.created_at }}</p>
         </div>
