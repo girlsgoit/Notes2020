@@ -2,23 +2,15 @@
   <div class="note">
     <div class="container-note">
       <div v-for="(noteElement, index) in noteElements" :key="index">
-        <h1 v-if="noteElement.tag === 'h1'" class="header">
-          {{ noteElement.content }}
-        </h1>
-        <h2 v-if="noteElement.tag === 'h2'" class="header2">
-          {{ noteElement.content }}
-        </h2>
-        <h3 v-if="noteElement.tag === 'h3'" class="header3">
-          {{ noteElement.content }}
-        </h3>
-        <p v-if="noteElement.tag === 'p'" class="paragraph">
-          {{ noteElement.content }}
-        </p>
+        <h1 v-if="noteElement.tag === 'h1'" class="header">{{ noteElement.content }}</h1>
+        <h2 v-if="noteElement.tag === 'h2'" class="header2">{{ noteElement.content }}</h2>
+        <h3 v-if="noteElement.tag === 'h3'" class="header3">{{ noteElement.content }}</h3>
+        <p v-if="noteElement.tag === 'p'" class="paragraph">{{ noteElement.content }}</p>
         <a v-if="noteElement.tag === 'a'">{{ noteElement.content }}</a>
         <ul v-if="noteElement.tag === 'ul'" class="list">
           <li v-for="item in noteElement" :key="item">{{ item }}</li>
         </ul>
-        <img v-if="noteElement.tag === 'img'" :src="noteElement.content" />
+        <img v-if="noteElement.tag === 'img'" :src="noteElement.content">
       </div>
     </div>
 
@@ -34,39 +26,35 @@ import axios from "axios";
 export default {
   name: "Notes",
 
-  data: function () {
+  data: function() {
     return {
       noteElements: [],
       noteId: null
     };
   },
   created() {
+    const that = this;
     this.noteId = this.$route.params.id;
-    const url = "http://notes-api.girlsgoit.org/notes/" + this.noteId;
+    const url = "https://notes-api.girlsgoit.org/notes/" + this.noteId;
     axios
       .get(url)
-      .then(function (response) {
-        this.noteElements = response.data.note_elements;
-        this.noteElements = [
-          { tag: "h1", content: "h1 tag" },
-          { tag: "h2", content: "h2 tag" },
-          { tag: "h3", content: "h3 tag" }
-        ];
+      .then(function(response) {
+        that.noteElements = response.data.note_elements;
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   },
   methods: {
-    onDeleteNote: function () {
+    onDeleteNote: function() {
       const that = this;
 
       axios
         .delete("https://notes-api.girlsgoit.org/notes/" + that.noteId + "/")
-        .then(function () {
+        .then(function() {
           that.$router.push({ path: "/dashboard" });
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log(error);
         });
     }
@@ -98,10 +86,7 @@ export default {
   line-height: 36px;
 }
 .container-note img {
-  width: 938px;
-  height: 624px;
-  left: 251px;
-  top: 672px;
+  width: 100%;
 }
 
 .container-note a {
