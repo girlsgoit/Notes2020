@@ -27,7 +27,7 @@ export default {
 
       axios
         .delete("https://notes-api.girlsgoit.org/notes/" + that.noteId + "/")
-        .then(function (response) {
+        .then(function () {
           that.$router.push({ path: "/dashboard" });
         })
         .catch(function (error) {
