@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <HeaderLogIn :user="user" v-if="token"/>
+    <HeaderLogIn :user="user" v-if="token" />
     <router-view></router-view>
+    <Footer v-if="token" />
   </div>
 </template>
 
 <script>
+import Footer from "./components/Footer";
 import HeaderLogIn from "./components/HeaderLogIn";
 
 export default {
   name: "App",
   components: {
-    HeaderLogIn
+    HeaderLogIn,
+    Footer
   },
   data() {
     return {
