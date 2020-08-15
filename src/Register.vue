@@ -2,19 +2,19 @@
   <div>
     <div class="register">
       <img
-        class="logo"
-        src="https://s3-alpha-sig.figma.com/img/eb24/ca1c/6b46f3629797526e406626fc13be7290?Expires=1597622400&Signature=SX5MRkeXwQWPZ1MpDbbd-niUIsiEgrQk7BsW8iwj1RVj~QxlTWHRqw66e5AkZWPD-DElxe1bgVSuU4NEykSlTaa6N-YwQuGEt~NKPHYd-YBQDATFV5Y-JwO8dMBH~gQ6xTZQdYpOssiZZJgOLgXnUChwLU-rO4RNAofeYrcU4n11ybICxJOlXrBTk-YqDOhl1ITDghO37-s2GH~P-jjlNzGUOXiomRtsqAMF5SPEK8yykxW59CoL9krPH5UeFngyNN3oAQN5pGp8~m2mJOKnX9xuRUE2pckqfkhcdB7waVPvwO8Vn1dYBvGStWdCd~hcMRP0z7aOObVuHrikcw3qRg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          class="logo"
+          src="/assets/logo.svg"
       >
-      
+
       <input type="text" placeholder="Username" name="username" v-model="input.username">
-      
+
       <input type="text" placeholder="Full Name" v-model="input.fullName">
       <input type="password" placeholder="Enter Password" name="password" v-model="input.password">
       <input
-        type="password"
-        placeholder="Repeat Password"
-        name="confirm_password"
-        v-model="input.confirmPassword"
+          type="password"
+          placeholder="Repeat Password"
+          name="confirm_password"
+          v-model="input.confirmPassword"
       >
       <p v-if="registerComplete">Your registration was successfully completed !</p>
       <p v-if="registerComplete">Log in and enjoy Notes!</p>
@@ -26,6 +26,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   name: "Register",
   data: function() {
@@ -43,9 +44,9 @@ export default {
   methods: {
     onRegister() {
       if (
-        this.input.username === "" ||
-        this.input.password === "" ||
-        this.input.confirmPassword === ""
+          this.input.username === "" ||
+          this.input.password === "" ||
+          this.input.confirmPassword === ""
       ) {
         alert("Enter the required data");
       } else if (this.input.password !== this.input.confirmPassword) {
@@ -59,19 +60,19 @@ export default {
         };
 
         axios
-          .post("https://notes-api.girlsgoit.org/users/", data)
-          .then(function() {
-            console.log("mergeee");
-            that.input.username = that.input.fullName = that.input.password = that.input.confirmPassword =
-              "";
+            .post("https://notes-api.girlsgoit.org/users/", data)
+            .then(function() {
+              console.log("mergeee");
+              that.input.username = that.input.fullName = that.input.password = that.input.confirmPassword =
+                  "";
 
-            that.registerComplete = true;
-          })
-          .catch(function(error) {
-            // if(error.data.status === 400) {
-            console.log(error);
-            alert("This username exists");
-          });
+              that.registerComplete = true;
+            })
+            .catch(function(error) {
+              // if(error.data.status === 400) {
+              console.log(error);
+              alert("This username exists");
+            });
       }
     },
     goToLogin() {
@@ -94,12 +95,14 @@ export default {
   margin-top: 150px;
   margin-bottom: 50px;
 }
+
 .register h2 {
   font-family: Lobster;
   text-align: center;
   color: #1b81e0;
   font-size: 40px;
 }
+
 input[type="text"],
 input[type="password"] {
   width: 100%;
@@ -111,6 +114,7 @@ input[type="password"] {
   border: 1px solid #666666;
   color: black;
 }
+
 .register-button,
 .login-button {
   cursor: pointer;
@@ -130,6 +134,7 @@ input[type="password"] {
   color: white;
   transition: 0.7s;
 }
+
 .login-button {
   display: inline-block;
   font-size: 17px;
@@ -149,6 +154,7 @@ input[type="password"] {
 a.register-button:hover {
   background-color: #64b4fa;
 }
+
 a.login-button:hover {
   background-color: #1b81e0;
   color: white;
