@@ -1,35 +1,36 @@
 <template>
   <div>
-    <ButtonNewElement @newElement="newElement" @getButtonId="getButtonId($event)"></ButtonNewElement>
-
     <section class="rectangle" v-if="isVisible">
       <div class="note-element">
-        <textarea class="input1" placeholder="Write your text here" v-if="isVisible" v-model="text"></textarea>
-        <br>
+        <textarea
+          class="input1"
+          placeholder="Write your text here"
+          v-if="isVisible"
+          v-model="text"
+        ></textarea>
+        <br />
       </div>
       <div class="buttons">
         <button
           class="style-button"
-          @click="addElement(text,buttonTag)"
+          @click="addElement(text, buttonTag)"
           v-for="buttonTag in buttonTags"
           :key="buttonTag"
-        >{{buttonTag}}</button>
+        >
+          {{ buttonTag }}
+        </button>
       </div>
     </section>
   </div>
 </template>
 <script>
 import axios from "axios";
-import ButtonNewElement from "./ButtonNewElement";
 export default {
   name: "Notes",
-  components: {
-    ButtonNewElement
-  },
-  data: function() {
+  props: ["isVisible"],
+  data: function () {
     return {
       text: "",
-      isVisible: false,
       idNote: null,
       indexElements: 1,
       buttonTags: ["h1", "h2", "h3", "img", "p", "ul", "link"],
@@ -38,13 +39,6 @@ export default {
   },
 
   methods: {
-    getButtonId(event) {
-      this.indexElements = event;
-    },
-    newElement() {
-      this.isVisible = true;
-      console.log("here");
-    },
     addElement(text, tagHere, idNote) {
       const that = this;
       this.idNote = this.$route.params.id;
@@ -61,11 +55,11 @@ export default {
       if (this.$route.path === "/new-notes") {
         axios
           .post("https://notes-api.girlsgoit.org/notes/", data)
-          .then(response => {
+          .then((response) => {
             console.log(response);
             this.$router.push({ path: `/notes/${response.data.id}` });
           })
-          .catch(error => {
+          .catch((error) => {
             console.log(error.response.request._response);
           });
         this.text = null;
@@ -74,11 +68,11 @@ export default {
       //------------------------------
       axios
         .get("https://notes-api.girlsgoit.org/notes/" + this.idNote + "/")
-        .then(function(response) {
+        .then(function (response) {
           that.elements = response.data.note_elements;
           console.log(that.elements);
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
         });
       this.elements.splice(this.indexElements, 0, data.note_elements);
@@ -90,10 +84,10 @@ export default {
           "https://notes-api.girlsgoit.org/notes/" + this.idNote,
           this.elements
         )
-        .then(function(response) {
+        .then(function (response) {
           console.log(response);
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error.response.request._response);
         });
       //-----------------------------------------
