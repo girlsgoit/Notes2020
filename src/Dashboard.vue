@@ -83,6 +83,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 
 .cards-section {
+  max-width: 960px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
