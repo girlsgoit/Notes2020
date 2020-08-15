@@ -1,7 +1,5 @@
 <template>
-  <div class="hello">
-    <h1>router done</h1>
-  </div>
+  <div class="hello">Hello World</div>
 </template>
 
 <script>
