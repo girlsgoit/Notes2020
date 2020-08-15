@@ -1,7 +1,7 @@
 <template>
   <div
     class="add-element-button"
-    @click="addButton()"
+    @click.stop="addButton()"
     :class="{
       active: isActive
     }"
@@ -30,8 +30,8 @@ export default {
   flex-direction: row;
   align-items: center;
   opacity: 0;
-  margin-bottom: -30px;
-  transform: translateY(-100%);
+  padding: 10px 0;
+  margin: -25px 0;
   position: relative;
   z-index: 10;
   background: rgba(255, 255, 255, 0.5);
@@ -41,7 +41,7 @@ export default {
 .add-element-button:hover {
   cursor: pointer;
   opacity: 1;
-  transition: 1s;
+  transition: 0.3s;
 }
 
 .add-element-button .add-element {
@@ -54,7 +54,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 21px;
@@ -63,7 +62,6 @@ export default {
 
 .add-element-button .line {
   width: calc(50% - 25px);
-  border: 1px solid #208afa;
   border: none;
   background-color: #208afa;
   height: 2px;

@@ -24,7 +24,7 @@
             noteElement.content
           }}</a>
           <ul v-if="noteElement.tag === 'ul'" class="list">
-            <li v-for="item in noteElement.content.split(',')" :key="item">
+            <li v-for="item in noteElement.content.split('\n')" :key="item">
               {{ item }}
             </li>
           </ul>
@@ -48,7 +48,7 @@
     />
 
     <div class="delete-button-container">
-      <button class="delete-button" @click="onDeleteNote">Delete Note</button>
+      <button class="delete-button" @click="onDeleteNote">DELETE NOTE</button>
     </div>
   </div>
 </template>
@@ -110,7 +110,6 @@ export default {
 </script>
 
 <style scopped>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 .container-note {
   max-width: 960px;
   margin: 0 auto;
@@ -119,14 +118,12 @@ export default {
   padding-top: 30px;
 }
 .header {
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 56px;
   line-height: 64px;
 }
 .paragraph {
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 21px;
@@ -137,7 +134,6 @@ export default {
 }
 
 .container-note a {
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 21px;
@@ -151,7 +147,6 @@ export default {
 }
 
 .list {
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 21px;
@@ -159,7 +154,6 @@ export default {
 }
 
 .header3 {
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 26px;
@@ -168,7 +162,6 @@ export default {
 }
 
 .header2 {
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 32px;
@@ -177,7 +170,6 @@ export default {
 }
 
 .paragraph2 {
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 21px;
@@ -223,15 +215,15 @@ export default {
 .delete-button {
   background-color: white;
   color: #fa4820;
-  font-family: Arial black;
   padding: 14px 20px;
   margin: 20px;
-  border-color: #fa4820;
-  border-style: ridge;
+  border: 1px solid #fa4820;
+  font-weight: bold;
   cursor: pointer;
-  opacity: 0.9;
-  border-radius: 10px;
+  opacity: 0.5;
+  border-radius: 5px;
   width: 960px;
+  transition: opacity 0.2s ease-in;
 }
 
 .delete-button:hover {

@@ -86,18 +86,11 @@ export default {
 </script>
 
 <style>
-.note-container {
-  width: 100%;
-  height: 280px;
-  position: fixed;
-  background-color: #f2f2f2;
-  bottom: 22px;
-}
 .rectangle {
   position: fixed;
   display: inline-block;
   background-color: white;
-  box-shadow: 0px -2px 40px rgba(191, 191, 191, 0.5);
+  box-shadow: 0 -2px 40px rgba(191, 191, 191, 0.5);
   border-radius: 10px;
   padding: 30px;
   width: 750px;
@@ -105,15 +98,14 @@ export default {
   transform: translateX(-50%);
   left: 50%;
   max-width: 90%;
-  bottom: 0;
-  z-index: 5;
+  bottom: 10px;
+  z-index: 20;
 }
 .rectangle .note-element {
   padding-bottom: 10px;
 }
 
 .rectangle .input1 {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -121,7 +113,7 @@ export default {
   line-height: 22px;
   border: none;
   width: 100%;
-  height: 150px;
+  height: 6em;
   resize: none;
 }
 .rectangle .input1:focus {
@@ -138,7 +130,6 @@ export default {
   color: white;
   padding: 15px;
   border-radius: 5px;
-  font-family: "Roboto", sans-serif;
   width: 90px;
   border: none;
   cursor: pointer;
