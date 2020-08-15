@@ -28,6 +28,7 @@ export default {
 .footer {
   background-color: #fafafa;
   padding: 40px;
+  margin-top: auto;
 }
 .footer p {
   text-align: center;

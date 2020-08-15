@@ -18,8 +18,8 @@
       >
       <p v-if="registerComplete">Your registration was successfully completed !</p>
       <p v-if="registerComplete">Log in and enjoy Notes!</p>
-      <a class="register-button" @click="onRegister">Register</a>
-      <a class="login-button" v-on:click="goToLogin()">Log In</a>
+      <button class="register-button" @click="onRegister">Register</button>
+      <button class="login-button" v-on:click="goToLogin()">Log In</button>
     </div>
   </div>
 </template>
@@ -90,6 +90,9 @@ export default {
   box-sizing: border-box;
   padding: 30px;
   box-shadow: 5px 10px #bccacc;
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
 .register h2 {
   font-family: Lobster;
@@ -108,6 +111,11 @@ input[type="password"] {
   border: 1px solid #666666;
   color: black;
 }
+.register-button,
+.login-button {
+  cursor: pointer;
+}
+
 .register-button {
   display: inline-block;
   font-size: 17px;
@@ -133,6 +141,7 @@ input[type="password"] {
   outline: none;
   border: none;
   border-radius: 3px;
+  background-color: transparent;
   color: #2876bf;
   transition: 0.5s;
 }
