@@ -1,6 +1,7 @@
 <template>
   <div>
-    <ButtonNewElement @newElement="newElement($event)" @getButtonId="getButtonId($event)"></ButtonNewElement>
+    <ButtonNewElement @newElement="newElement" @getButtonId="getButtonId($event)"></ButtonNewElement>
+
     <section class="rectangle" v-if="isVisible">
       <div class="note-element">
         <textarea class="input1" placeholder="Write your text here" v-if="isVisible" v-model="text"></textarea>
@@ -40,8 +41,9 @@ export default {
     getButtonId(event) {
       this.indexElements = event;
     },
-    newElement(event) {
-      this.isVisible = event;
+    newElement() {
+      this.isVisible = true;
+      console.log("here");
     },
     addElement(text, tagHere, idNote) {
       const that = this;
@@ -122,6 +124,8 @@ export default {
   transform: translateX(-50%);
   left: 50%;
   max-width: 90%;
+  bottom: 0;
+  z-index: 5;
 }
 .rectangle .note-element {
   padding-bottom: 10px;

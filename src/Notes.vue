@@ -11,6 +11,14 @@
           <li v-for="item in noteElement" :key="item">{{ item }}</li>
         </ul>
         <img v-if="noteElement.tag === 'img'" :src="noteElement.content">
+
+        <AddElement
+          :blocks="blocks"
+          :index="currentIndex"
+          :id="noteId"
+          @blockAdded="blocks=($event)"
+          @indexAdded="currentIndex=($event)"
+        />
       </div>
     </div>
 
@@ -32,7 +40,9 @@ export default {
   data: function() {
     return {
       noteElements: [],
-      noteId: null
+      noteId: null,
+      blocks: [],
+      currentIndex: 0
     };
   },
   created() {
