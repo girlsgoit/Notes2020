@@ -4,8 +4,10 @@
     <h2 v-if="tag === 'h2'">{{value}}</h2>
     <h3 v-if="tag === 'h3'">{{value}}</h3>
     <p v-if="tag === 'p'">{{value}}</p>
-    <a class="a" v-if="tag === 'a'" :href="value">{{value}}</a>
-    <div class="photo" v-if="tag === 'img'"><img :src="value"/></div>
+    <a v-if="tag === 'a'" :href="value">{{value}}</a>
+    <div class="photo" v-if="tag === 'img'">
+      <img :src="value">
+    </div>
     <ul v-if="tag === 'ul'">
       <li v-for="(ulElement, index)  in ulElements" :key="index">{{ulElement}}</li>
     </ul>
@@ -43,6 +45,5 @@ a {
   text-decoration: none;
   color: #1b81e0;
 }
-
 </style>
 
