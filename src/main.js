@@ -6,7 +6,7 @@ import Dashboard from "./Dashboard";
 import Notes from "./Notes";
 import Axios from "axios";
 import Register from "./Register";
-import Landing from "./Landing";
+import Landing from "./Landings";
 
 Vue.config.productionTip = false;
 
