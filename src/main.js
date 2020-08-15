@@ -1,12 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Axios from "axios";
 import App from "./App.vue";
 import LogIn from "./components/LogIn";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
 import Register from "./Register";
 import Landing from "./Landing";
-import Axios from "axios";
+import WorkInProgress from "@/WorkInProgress";
 
 Vue.config.productionTip = false;
 
@@ -29,6 +30,8 @@ const routes = [
   { path: "/dashboard", component: Dashboard, beforeEnter: loginGuard },
   { path: "/notes/:id", component: Notes, beforeEnter: loginGuard },
   { path: "/new-notes", component: Notes, beforeEnter: loginGuard },
+  { path: "/settings", component: WorkInProgress, beforeEnter: loginGuard },
+  { path: "/help", component: WorkInProgress, beforeEnter: loginGuard },
   { path: "*", component: Landing }
 ];
 

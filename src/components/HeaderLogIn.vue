@@ -80,7 +80,6 @@ export default {
   margin: 0;
   justify-content: center;
   align-items: center;
-  margin-left: 0px;
 }
 
 .nav-links .link {
@@ -88,7 +87,7 @@ export default {
 }
 
 .nav-links ul li:first-child .link {
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 a:hover {
@@ -113,24 +112,22 @@ a:hover {
     flex-direction: column;
   }
 
-  .logo,
+  .logo {
+    align-items: start;
+  }
+
+  .name {
+    margin-top: 80px;
+  }
+
   .link,
   .nav-links {
     width: 100%;
     justify-content: center;
   }
 
-  .logo {
-    order: -1;
-    margin-bottom: 30px;
-  }
-
   .nav-links ul {
     justify-content: center;
-  }
-
-  .logo {
-    margin-bottom: 30px;
   }
 
   .link {
@@ -146,7 +143,7 @@ a:hover {
     align-items: center;
   }
 
-  .nav-links ul li a {
+  .nav-links .link {
     margin: 5px 0;
   }
 }
