@@ -20,7 +20,7 @@
             <a class="link" href="help.html">HELP</a>
           </li>
           <li>
-            <a class="link" href="signout.html">SIGN OUT</a>
+            <a class="link" @click.prevent="signOut()" href="signout.html">SIGN OUT</a>
           </li>
         </ul>
       </div>
@@ -30,7 +30,13 @@
 
 <script>
 export default {
-  name: "HeaderLogIn"
+  name: "HeaderLogIn",
+  methods: {
+    signOut() {
+      localStorage.clear();
+      this.$router.push({ path: "/" });
+    }
+  }
 };
 </script>
 
@@ -117,5 +123,4 @@ a:hover {
     margin: 5px 0;
   }
 }
-
 </style>

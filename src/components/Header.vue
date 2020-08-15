@@ -6,13 +6,11 @@
 
 <script>
 import HeaderLogIn from "./HeaderLogIn";
-import HeaderLogOut from "./HeaderLogOut";
 
 export default {
   name: "Header",
   components: {
-    HeaderLogIn,
-    HeaderLogOut
+    HeaderLogIn
   }
 };
 </script>

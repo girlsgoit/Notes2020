@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
-import App from "./App.vue";
+import App from "./App.vue"
 import LogIn from "./components/LogIn.vue";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
@@ -26,10 +25,11 @@ Axios.interceptors.request.use(
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/", component: HelloWorld },
+
   { path: "/login", component: LogIn },
   { path: "/dashboard", component: Dashboard },
-  { path: "/notes/:id", component: Notes }
+  { path: "/notes/:id", component: Notes },
+  { path: "/new-notes", component: Notes }
 ];
 
 const router = new VueRouter({

@@ -1,12 +1,21 @@
 <template>
-  <h1>Dashboard</h1>
+  <div>
+    <h1>Dashboard</h1>
+    <Toolbar></Toolbar>
+  </div>
 </template>
-
 <script>
+import Toolbar from "./components/Toolbar";
 export default {
-  name: "Dashboard"
+  name: "Dashboard",
+  components: {
+    Toolbar
+  },
+  data: function() {
+    return {};
+  }
 };
 </script>
 
-<style scoped>
 <style>
+</style>

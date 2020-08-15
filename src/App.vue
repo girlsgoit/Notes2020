@@ -1,22 +1,39 @@
 <template>
   <div id="app">
-    <Header/>
+    <HeaderLogIn :user="user" v-if="token" />
     <router-view></router-view>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header";
 import Footer from "./components/Footer";
+import HeaderLogIn from "./components/HeaderLogIn";
+
 export default {
   name: "App",
   components: {
-    Header,
+    HeaderLogIn,
     Footer
   },
-  data: function() {
-    return {};
+  data() {
+    return {
+      token: "",
+      user: {}
+    };
+  },
+  created() {
+    this.token = localStorage.getItem("NOTES_AUTH");
+
+    if (this.token) {
+      this.user = {
+        username: localStorage.getItem("USER_NAME"),
+        fullName: localStorage.getItem("FULL_NAME"),
+        id: localStorage.getItem("USER_ID")
+      };
+
+      console.log(this.user);
+    }
   }
 };
 </script>
