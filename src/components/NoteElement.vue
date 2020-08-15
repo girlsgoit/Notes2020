@@ -38,6 +38,7 @@ export default {
 }
 
 .photo img {
+  max-width: 960px;
   width: 100%;
 }
 
