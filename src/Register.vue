@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="register">
-      <img
-          class="logo"
-          src="/assets/logo.svg"
-      >
+      <img class="logo" src="/assets/logo.svg">
 
       <input type="text" placeholder="Username" name="username" v-model="input.username">
 

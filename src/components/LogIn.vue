@@ -1,9 +1,6 @@
 <template>
   <div class="login-card">
-    <img
-      class="logo"
-      src="/assets/logo.svg"
-    >
+    <img class="logo" src="/assets/logo.svg">
     <input type="text" name="username" placeholder="Username" v-model="input.username">
     <input type="password" name="password" v-model="input.password" placeholder="Password">
     <div class="buttons">
