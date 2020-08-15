@@ -5,20 +5,18 @@
         <textarea
           class="input1"
           placeholder="Write your text here"
-          v-if="isVisible"
           v-model="text"
         ></textarea>
         <br />
       </div>
       <div class="buttons">
-        <button
-          class="style-button"
-          @click="addElement(text, buttonTag)"
-          v-for="buttonTag in buttonTags"
-          :key="buttonTag"
-        >
-          {{ buttonTag }}
-        </button>
+        <button class="style-button" @click="save('h1', text)">H1</button>
+        <button class="style-button" @click="save('h2', text)">H2</button>
+        <button class="style-button" @click="save('h3', text)">H3</button>
+        <button class="style-button" @click="save('p', text)">P</button>
+        <button class="style-button" @click="save('ul', text)">UL</button>
+        <button class="style-button" @click="save('a', text)">LINK</button>
+        <button class="style-button" @click="save('img', text)">IMAGE</button>
       </div>
     </section>
   </div>
@@ -27,72 +25,61 @@
 import axios from "axios";
 export default {
   name: "Notes",
-  props: ["isVisible"],
+  props: {
+    blocks: Array,
+    index: Number,
+    id: String,
+    isVisible: Boolean
+  },
   data: function () {
     return {
       text: "",
-      idNote: null,
-      indexElements: 1,
-      buttonTags: ["h1", "h2", "h3", "img", "p", "ul", "link"],
-      elements: [] //!!lista cu elemente poate avea alta denumire
+      indexMod: 0,
+      blocksMod: [],
+      isNewNote: false
     };
   },
 
   methods: {
-    addElement(text, tagHere, idNote) {
-      const that = this;
-      this.idNote = this.$route.params.id;
-      const data = {
-        note_elements: [
-          {
-            tag: tagHere,
-            content: this.text
-          }
-        ]
-      };
-
-      //daca e o notita noua,sa se creeze o noua notita
-      if (this.$route.path === "/new-notes") {
-        axios
-          .post("https://notes-api.girlsgoit.org/notes/", data)
-          .then((response) => {
-            console.log(response);
-            this.$router.push({ path: `/notes/${response.data.id}` });
-          })
-          .catch((error) => {
-            console.log(error.response.request._response);
-          });
-        this.text = null;
-        this.isVisible = false;
+    save: function (tag, content) {
+      if (!this.id) {
+        this.isNewNote = true;
       }
-      //------------------------------
-      axios
-        .get("https://notes-api.girlsgoit.org/notes/" + this.idNote + "/")
-        .then(function (response) {
-          that.elements = response.data.note_elements;
-          console.log(that.elements);
+
+      this.indexMod = this.index;
+      this.blocksMod = this.blocks;
+      let newBlock = {
+        tag: tag,
+        content: content
+      };
+      if (!content) {
+        return;
+      }
+      this.blocksMod.splice(this.indexMod, 0, newBlock);
+      this.indexMod++;
+
+      const axiosMethod = this.isNewNote ? axios.post : axios.put;
+
+      axiosMethod(
+        `https://notes-api.girlsgoit.org/notes/${
+          this.isNewNote ? "" : this.id + "/"
+        }`,
+        {
+          note_elements: this.blocks
+        }
+      )
+        .then((response) => {
+          this.text = "";
+          this.$emit("indexAdded", this.indexMod);
+          this.$emit("blockAdded", response.data.note_elements);
+
+          if (this.isNewNote) {
+            this.$router.push("/notes/" + response.data.id);
+          }
         })
         .catch((error) => {
           console.log(error);
         });
-      this.elements.splice(this.indexElements, 0, data.note_elements);
-      console.log(this.elements);
-      //salvarea noului element si afisarea in lista
-
-      axios
-        .put(
-          "https://notes-api.girlsgoit.org/notes/" + this.idNote,
-          this.elements
-        )
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error.response.request._response);
-        });
-      //-----------------------------------------
-      this.text = null;
-      this.isVisible = false;
     }
   }
 };

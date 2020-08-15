@@ -1,39 +1,49 @@
 <template>
   <div class="note">
     <div class="container-note">
-      <div
-        @click="hideEditor"
-        v-for="(noteElement, index) in noteElements"
-        :key="index"
-      >
-        <h1 v-if="noteElement.tag === 'h1'" class="header">
-          {{ noteElement.content }}
-        </h1>
-        <h2 v-if="noteElement.tag === 'h2'" class="header2">
-          {{ noteElement.content }}
-        </h2>
-        <h3 v-if="noteElement.tag === 'h3'" class="header3">
-          {{ noteElement.content }}
-        </h3>
-        <p v-if="noteElement.tag === 'p'" class="paragraph">
-          {{ noteElement.content }}
-        </p>
-        <a v-if="noteElement.tag === 'a'">{{ noteElement.content }}</a>
-        <ul v-if="noteElement.tag === 'ul'" class="list">
-          <li v-for="item in noteElement" :key="item">{{ item }}</li>
-        </ul>
-        <img v-if="noteElement.tag === 'img'" :src="noteElement.content" />
+      <div v-for="(noteElement, index) in noteElements" :key="index">
+        <ButtonNewElement
+          @newElement="newElementAt(index)"
+          :isActive="currentIndex === index && isEditorVisible"
+        />
+
+        <div @click="hideEditor">
+          <h1 v-if="noteElement.tag === 'h1'" class="header">
+            {{ noteElement.content }}
+          </h1>
+          <h2 v-if="noteElement.tag === 'h2'" class="header2">
+            {{ noteElement.content }}
+          </h2>
+          <h3 v-if="noteElement.tag === 'h3'" class="header3">
+            {{ noteElement.content }}
+          </h3>
+          <p v-if="noteElement.tag === 'p'" class="paragraph">
+            {{ noteElement.content }}
+          </p>
+          <a v-if="noteElement.tag === 'a'" :href="noteElement.content">{{
+            noteElement.content
+          }}</a>
+          <ul v-if="noteElement.tag === 'ul'" class="list">
+            <li v-for="item in noteElement.content.split(',')" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+          <img v-if="noteElement.tag === 'img'" :src="noteElement.content" />
+        </div>
       </div>
 
-      <ButtonNewElement @newElement="newElementAt(noteElements.length)" />
+      <ButtonNewElement
+        @newElement="newElementAt(noteElements.length)"
+        :isActive="currentIndex === noteElements.length && isEditorVisible"
+      />
     </div>
 
     <AddElement
       :isVisible="isEditorVisible"
-      :blocks="blocks"
+      :blocks="noteElements"
       :index="currentIndex"
       :id="noteId"
-      @blockAdded="blocks = $event"
+      @blockAdded="noteElements = $event"
       @indexAdded="currentIndex = $event"
     />
 
@@ -47,7 +57,6 @@
 import axios from "axios";
 import AddElement from "./components/AddElement";
 import ButtonNewElement from "./components/ButtonNewElement";
-import func from "../vue-temp/vue-editor-bridge";
 
 export default {
   name: "Notes",
@@ -59,7 +68,6 @@ export default {
     return {
       noteElements: [],
       noteId: null,
-      blocks: [],
       currentIndex: 0,
       isEditorVisible: false
     };
@@ -78,7 +86,7 @@ export default {
       });
   },
   methods: {
-    newElement: function (index) {
+    newElementAt: function (index) {
       this.currentIndex = index;
       this.isEditorVisible = true;
     },

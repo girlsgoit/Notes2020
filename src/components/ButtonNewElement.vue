@@ -1,14 +1,21 @@
- <template>
-  <div class="add-element-button">
-    <hr class="line line-left">
-    <div @click="addButton()" class="add-element">+</div>
-    <hr class="line line-right">
+<template>
+  <div
+    class="add-element-button"
+    @click="addButton()"
+    :class="{
+      active: isActive
+    }"
+  >
+    <hr class="line line-left" />
+    <div class="add-element">+</div>
+    <hr class="line line-right" />
   </div>
 </template>
 
 <script>
 export default {
   name: "ButtonNewElement",
+  props: ["isActive"],
   methods: {
     addButton() {
       this.$emit("newElement");
@@ -23,7 +30,12 @@ export default {
   flex-direction: row;
   align-items: center;
   opacity: 0;
-  margin-top: 15px;
+  margin-bottom: -30px;
+  transform: translateY(-100%);
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .add-element-button:hover {
@@ -63,7 +75,12 @@ export default {
 .add-element-button.active .add-element {
   display: none;
 }
-.add-element-button.active.line-left {
+
+.add-element-button.active {
+  opacity: 1;
+}
+
+.add-element-button.active .line-left {
   width: 100%;
   background-color: #fab965;
 }
