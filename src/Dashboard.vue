@@ -1,23 +1,17 @@
 <template>
   <div>
-    <section class="bar_line">
-      <div class="bar_create_note">
-        <h1 class="name">Dashboard</h1>
-        <a class="button" @click="newNote()">NEW NOTE</a>
-      </div>
-    </section>
+   <Toolbar></Toolbar>
   </div>
 </template>
 <script>
+import Toolbar from "./components/Toolbar";
 export default {
   name: "Dashboard",
+  components:{
+    Toolbar
+  },
   data: function() {
     return {};
-  },
-  methods: {
-    newNote() {
-      this.$router.push({ path: "/new-notes" });
-    }
   }
 };
 </script>
