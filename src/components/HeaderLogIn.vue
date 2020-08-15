@@ -2,25 +2,25 @@
   <header class="header-style">
     <div class="header-text">
       <div class="name">
-        <span class="link">Nume Prenume</span>
+        <span class="link">{{user.fullName || user.username}}</span>
       </div>
 
       <div class="logo">
-        <a href="index.html">
-          <img src="/assets/logo.svg" alt="Logo">
-        </a>
+        <router-link to="/dashboard">
+          <img src="/assets/logo.svg" alt="Logo" />
+        </router-link>
       </div>
 
       <div class="nav-links">
         <ul>
           <li>
-            <a class="link" href="settings.html">SETTINGS</a>
+            <router-link to="/settings" class="link">SETTINGS</router-link>
           </li>
           <li>
-            <a class="link" href="help.html">HELP</a>
+            <router-link to="/help" class="link">HELP</router-link>
           </li>
           <li>
-            <a class="link" @click.prevent="signOut()" href="signout.html">SIGN OUT</a>
+            <button @click.prevent="signOut()" class="link">SIGN OUT</button>
           </li>
         </ul>
       </div>
@@ -31,6 +31,7 @@
 <script>
 export default {
   name: "HeaderLogIn",
+  props: ["user"],
   methods: {
     signOut() {
       localStorage.clear();
@@ -62,6 +63,10 @@ export default {
   text-decoration: none;
   color: #393939;
   text-transform: uppercase;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: block;
 }
 .nav-links ul {
   list-style-type: none;
@@ -70,11 +75,13 @@ export default {
   padding: 0;
   margin: 0;
   justify-content: center;
+  align-items: center;
+  margin-left: 0px;
 }
-.nav-links a {
+.nav-links .link {
   margin-left: 40px;
 }
-.nav-links ul li:first-child a {
+.nav-links ul li:first-child .link {
   margin-left: 0px;
 }
 a:hover {
@@ -95,9 +102,11 @@ a:hover {
   .link,
   .nav-links {
     width: 100%;
+    justify-content: center;
   }
   .logo {
     order: -1;
+    margin-bottom: 30px;
   }
   .nav-links ul {
     justify-content: center;
