@@ -7,7 +7,7 @@
 
       <div class="logo">
         <router-link to="/dashboard">
-          <img src="/assets/logo.svg" alt="Logo" />
+          <img src="/assets/logo.svg" alt="Logo">
         </router-link>
       </div>
 
@@ -35,6 +35,7 @@ export default {
   methods: {
     signOut() {
       localStorage.clear();
+      this.$parent.$emit("auth");
       this.$router.push({ path: "/" });
     }
   }

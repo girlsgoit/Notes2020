@@ -2,7 +2,7 @@
   <div class="container">
     <section id="hero-id">
       <div class="container-hero">
-        <h2>Let your contemplations slide</h2>
+        <h1>Let your contemplations slide</h1>
         <p>
           Be the person who makes everything become animated.
           Be other people’s motivation for the every day life. Compose your own notes.
@@ -23,7 +23,7 @@
       </p>
     </section>
 
-    <section class="features">
+    <section id="feature-boxes" class="features">
       <h2>Features</h2>
       <p>
         Notes is the perfect place to take advantage of the free time on your
@@ -32,12 +32,9 @@
         sometimes had and it will constantly bring back alluring memories from
         back in time.
       </p>
-    </section>
-
-    <section id="feature-boxes">
       <div class="feature-container">
         <div class="feature-box">
-          <img src="https://image.flaticon.com/icons/svg/2921/2921226.svg">
+          <img src="https://image.flaticon.com/icons/svg/2921/2921226.svg" alt="create">
           <h3>Create Personalized Notes</h3>
           <p>
             Using Notes you can effortlessly personalize your items. In other
@@ -46,7 +43,7 @@
           </p>
         </div>
         <div class="feature-box">
-          <img src="https://image.flaticon.com/icons/svg/2921/2921305.svg">
+          <img src="https://image.flaticon.com/icons/svg/2921/2921305.svg" alt="share">
           <h3>Share Notes</h3>
           <p>
             The written notes can be easily shared with everyone else. It also
@@ -55,7 +52,7 @@
           </p>
         </div>
         <div class="feature-box">
-          <img src="https://image.flaticon.com/icons/svg/2921/2921130.svg">
+          <img src="https://image.flaticon.com/icons/svg/2921/2921130.svg" alt="delete">
           <h3>Fast Delete</h3>
           <p>
             One click and your notes can be deleted. This site offers the
@@ -69,76 +66,76 @@
     <section class="grid_container">
       <img src="/assets/pics/summer1.jpg" alt="images1">
       <img src="/assets/pics/summer2.jpg" alt="images2">
-      
-      <img src="/assets/pics/summer3.jpg" alt="images3">
-      <img src="/assets/pics/summer4.jpg" alt="images4">
-      
-      <img src="/assets/pics/summer5.jpg" alt="images5">
-      <img src="/assets/pics/summer6.jpg" alt="images6">
-      
+
+      <img src="/assets/pics/summer3.png" alt="images3">
+      <img src="/assets/pics/summer4.png" alt="images4">
+
+      <img src="/assets/pics/summer5.png" alt="images5">
+      <img src="/assets/pics/summer6.png" alt="images6">
+
       <img src="/assets/pics/summer7.jpg" alt="images7">
-      <img src="/assets/pics/summer8.jpg" alt="images8">
+      <img src="/assets/pics/summer8.png" alt="images8">
     </section>
 
     <section class="all-logos">
       <div class="logo">
         <a class="logo-container" href="https://mecc.gov.md/">
           <img
-            src="https://s3-alpha-sig.figma.com/img/734f/b113/6e2662c3ca3440488e29a462b54f7f48?Expires=1598227200&Signature=e0XVsfy1nfMZugz0E972lbZgzAs0S65zwzjJBZAjg5gp9IFKLQiFR52lorijRYZFbxkVVZYpnD8JG1KoA0nqteizWBgowcKPrf1sUuzOQADtdlx6z8bCEaR0a66EdjQq1WiVRS0bq-eZbksZcv4tmOMQrkf8-b6PprdgotUZirAuctbcmscgVUr3sr23E3xOkrQ6SC0aSP7NILM~omuDo1jNX28SnL0wXI78bq7qUNJQFgzG1zKEk8s4G9jVfZfLtoM1ShtoOSUCpdA25wxx2A3zIpw1Nxcky4EYhnqr6zwklGYYcr5xQ37dsYzRNU3v7~rRIj~SuJSx-4CiXCIYjw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-            alt="Ministerul Educației, Culturii și Cercetării al Republicii Moldova"
+              src="/assets/partners/ministerul.png"
+              alt="Ministerul Educației, Culturii și Cercetării al Republicii Moldova"
           >
         </a>
-        
+
         <a class="logo-container" href="https://md.mfa.lt/">
           <img
-            src="https://s3-alpha-sig.figma.com/img/c597/3438/d5b574d7c7e34ce8e7fa3db11ce4d057?Expires=1598227200&Signature=WIVo9EVVNy6UGCx0gJgef-oxdJNK7wt-u9-w3knQB~czkMA~QTkVPXoiAcfGIT6r8GuRpUEqOQW-FmoAJF7iv5SmwG-jgnDdhM-i60~bIjFbcvStyF8MrCRHba3uvq8o~4BrnPxLRBvJkkU69-MK7hYBLAVlUu~BRx7VZDkano3XgmMQuejx~08og~qfpxrmPrKMWmKWsW~Ldg2U6WwEE~UhjFwHTQPDrbvaH8fFJZFGCRtYQKzvGPsSlKYc~jG4kt~XvKLGtOiMNDBFH7Fp5E3vPudEu0veSAwmUegCgc~lHSIJ2GDDg4Lt-uGWUHCmznJ3VHxh8o7CWd7SJMVTRg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-            alt="Embassy of the Republic of Lithuania to the Republic of Moldova"
+              src="/assets/partners/lithuania.png"
+              alt="Embassy of the Republic of Lithuania to the Republic of Moldova"
           >
         </a>
-        
+
         <a class="logo-container" href="https://www.crunchyroll.com/en-gb">
           <img
-            src="https://www.anbmedia.com/wp/wp-content/uploads/2020/06/crunchyroll.jpg"
-            alt="Crunchyroll"
+              src="/assets/partners/crunchyroll.svg"
+              alt="Crunchyroll"
           >
         </a>
-        
+
         <a class="logo-container" href="https://youngfeministfund.org/">
           <img
-            src="https://www.channelfoundation.org/wp-content/uploads/2017/02/frida_logo.gif"
-            alt="Frida"
+              src="/assets/partners/frida.svg"
+              alt="Frida"
           >
         </a>
-        
+
         <a class="logo-container" href="https://facebook.com/atelier99.org/">
           <img
-            src="data:image/png;base64,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"
-            alt="Atelier99"
+              src="/assets/partners/atelier99.svg"
+              alt="Atelier99"
           >
         </a>
-        
+
         <a class="logo-container" href="https://www.tekedu.org/">
-          <img src="https://www.tekedu.org/img/tekedu-logo-01.png" alt="Tekedu">
+          <img src="/assets/partners/tekedu.png" alt="Tekedu">
         </a>
-        
+
         <a class="logo-container" href="https://www.orange.md/">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg"
-            alt="Orange"
+              src="/assets/partners/orange.svg"
+              alt="Orange"
           >
         </a>
-        
+
         <a class="logo-container" href="https://www.goparrot.ai/">
           <img
-            src="https://s3-alpha-sig.figma.com/img/a72c/83da/749c288919a5b93c8e77cf70c1636737?Expires=1598227200&Signature=K-i3U7CRrZnr35PvO7E~F6mh9PFBP4y8OSagas6tqRcnt7tT21fO-G66MY1iVBLle-0eRFkdU4W7MoXo6uPTYIST4-fl0bt2TyHTo9SVeQ6kyb4a4E-MsvQ8j3nnEp7UK7evrV5i~~Ifi-jLwHVJH164KbVflG2Rcb9EHegX-ftY0m6A7ELBHktIfhe08DhwhACuwaXZoqktqAT0XkT-QY~kSr5cTz9Pe1xf980pdozQaKSE5NzO~8QhFW1bXDBeZL2h9YpNQMBOmRBxjCHs7r0oHOZpvUYmJCoe8FAJMJg5zJv20lSpWoLHD3IKwlJHt-t8xQv5YVZNA~DjRMxpOg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-            alt=" GoParrot"
+              src="/assets/partners/goparrot.png"
+              alt=" GoParrot"
           >
         </a>
-        
+
         <a class="logo-container" href="https://atomate.net/">
           <img
-            src="https://s3-alpha-sig.figma.com/img/e052/0451/7a35bde224f1371bdeae84027a8f0449?Expires=1598227200&Signature=fL2Gir-CfzgTjuBSjZuCDgZ-bAZW9QKwr9OXLNv2mTO8VVSwVF7bAT7DE7Z0DeCtl7w-nWrhLmoBAAOxhJ7Od~QLw6MUbf3w4wOJ2u5BpI8BfS14QkzpJxaQHdkW2w20GhFZ-uo-Svkd7nVEZ5R59TQAwRDvXK0n~SXrLNUahONzEF6TI1asJVLY1P-XrR-aHSYWfqcH5VNDarvydvAl4PJXHjrQG-GlEMwH4CL~JIJvZf0QlZIZNMfn9686q10-IiGK6im8i-EBFFLybs1hP9DWp7T2HIkOGM~cWPdryWYrLG2CtApIKbafPqOZ53To5XQuzy2szxDoxje9C6OCDg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-            alt="Atomate"
+              src="/assets/partners/atomate.png"
+              alt="Atomate"
           >
         </a>
       </div>
@@ -154,7 +151,7 @@ export default {
 </script>
 
 <style scoped>
-body {
+* {
   font-family: "Roboto", sans-serif;
 }
 
@@ -167,17 +164,18 @@ body {
   text-align: center;
   height: 100%;
 }
+
 #hero-id {
   min-height: 400px;
-  background: url("https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1578070181910-f1e514afdd08%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1104%26q%3D80")
-    no-repeat 0 -200px;
-  background-size: cover;
+  background: url("/assets/hero-background.jfif") no-repeat 0 -200px;
   background-position: center;
+  background-size: cover;
   width: 100%;
   text-align: center;
   color: white;
 }
-#hero-id h2 {
+
+#hero-id h1 {
   margin-top: 100px;
   margin-bottom: 10px;
 }
@@ -186,14 +184,17 @@ body {
   #hero-id {
     height: 100px;
   }
+
   #hero-id h2 {
     margin-top: 40px;
   }
 }
+
 @media only screen and (max-width: 320px) {
   #hero-id {
     height: 100px;
   }
+
   #hero-id h2 {
     margin-top: 40px;
   }
@@ -206,11 +207,9 @@ body {
   text-align: center;
   padding-left: 50px;
   padding-right: 50px;
+  padding-top: 50px;
 }
 
-.about h2 {
-  font-family: "Roboto";
-}
 
 .about p {
   color: #6a6a6a;
@@ -218,11 +217,13 @@ body {
   padding: 25px;
   margin: 0;
 }
+
 @media only screen and (max-width: 1180px) {
   .about p {
     padding: 15px;
   }
 }
+
 @media only screen and (max-width: 960px) {
   .about p {
     padding: 7px;
@@ -234,6 +235,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .feature-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -241,25 +243,28 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #fafafa;
 }
+
 .features {
   margin: 0 auto;
   text-align: center;
+  padding-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
+  background-color: #fafafa;
 }
-.features h2 {
-  font-family: "Roboto";
-}
+
+
 .features p {
   color: #6a6a6a;
   line-height: 2;
   padding: 25px;
   margin: 0;
 }
+
 #feature-boxes {
   margin-top: 20px;
+  background-color: #fafafa;
 }
 
 #feature-boxes .feature-box {
@@ -271,16 +276,19 @@ body {
 #feature-boxes .feature-box img {
   width: 90px;
 }
+
 @media only screen and (max-width: 1180px) {
   .features {
     max-width: 100%;
-    padding: 0px;
+    padding: 0;
   }
+
   .feature-all {
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
+
   .feature-container {
     flex-direction: column;
     align-items: center;
@@ -289,6 +297,7 @@ body {
   .features p {
     padding: 15px;
   }
+
   #feature-boxes .feature-box {
     text-align: center;
     width: 90%;
@@ -310,7 +319,7 @@ body {
 }
 
 .grid_container img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 1200px) {
@@ -319,6 +328,7 @@ body {
     grid-template-columns: repeat(2, auto);
   }
 }
+
 @media screen and (max-width: 900px) {
   .grid_container {
     display: grid;
@@ -330,32 +340,47 @@ body {
 img {
   width: 200px;
 }
+
 .all-logos {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  padding-top: 50px;
+  padding-bottom: 100px;
   background-color: #fafafa;
+  position: relative;
 }
+
+.all-logos::after {
+  content: '';
+  border-bottom: 1px solid #979797;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
+
 .logo {
   display: grid;
-  grid-gap: 30px 200px;
-  justify-content: space-evenly;
-  grid-template-columns: repeat(3, 200px);
+  grid-gap: 30px 250px;
+  justify-content: center;
+  grid-template-columns: repeat(3, 150px);
 }
 
 @media only screen and (max-width: 960px) {
   .logo {
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 150px 150px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .logo {
-    grid-template-columns: 200px;
+    grid-template-columns: 150px;
   }
 }
 </style>

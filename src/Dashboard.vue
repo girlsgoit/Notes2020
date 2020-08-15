@@ -7,15 +7,13 @@
         <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
         <p class="date">15 august</p>
       </div>
-    </div>
 
     <div class="column">
       <div class="card" @click="goToNote(element.id)" v-for="element in right_column_elements" :key="element.id">
         <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
         <p class="date">15 august</p>
       </div>
-    </div>
-  </section>
+    </section>
   </div>
 </template>
 
@@ -23,6 +21,7 @@
 import Toolbar from "./components/Toolbar";
 import NoteElement from "./components/NoteElement";
 import axios from "axios";
+
 export default {
   name: "Dashboard",
   components: {

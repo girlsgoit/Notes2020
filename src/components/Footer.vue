@@ -6,13 +6,13 @@
     </p>
     <ul>
       <li>
-        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://www.facebook.com/GirlsGoIT/">Facebook</a>
       </li>
       <li>
-        <a href="https://www.youtube.com/?hl=ru">Youtube</a>
+        <a href="https://www.youtube.com/channel/UCixmUgWhEp5Sj7kpzc6ZOTg">Youtube</a>
       </li>
       <li>
-        <a href="https://www.instagram.com/?hl=ru">Instagram</a>
+        <a href="https://instagram.com/girlsgoit?igshid=lp20ohcww4b0">Instagram</a>
       </li>
     </ul>
   </footer>
@@ -28,6 +28,7 @@ export default {
 .footer {
   background-color: #fafafa;
   padding: 40px;
+  margin-top: auto;
 }
 .footer p {
   text-align: center;
