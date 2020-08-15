@@ -1,4 +1,5 @@
 <template>
+  <h1>Dashboard</h1>
   <div>
    <Toolbar></Toolbar>
   </div>
