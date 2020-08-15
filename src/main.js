@@ -5,6 +5,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import LogIn from "./components/LogIn.vue";
 import Dashboard from "./Dashboard";
 import Notes from "./Notes";
+import HelloWorld from "./components/HelloWorld";
 import Axios from "axios";
 
 Vue.config.productionTip = false;

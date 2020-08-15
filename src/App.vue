@@ -7,9 +7,8 @@
 </template>
 
 <script>
-import Footer from "./components/Footer";
 import HeaderLogIn from "./components/HeaderLogIn";
-
+import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
@@ -31,8 +30,6 @@ export default {
         fullName: localStorage.getItem("FULL_NAME"),
         id: localStorage.getItem("USER_ID")
       };
-
-      console.log(this.user);
     }
   }
 };
