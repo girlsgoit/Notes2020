@@ -1,22 +1,18 @@
 <template>
   <div id="app">
     <HeaderLogIn v-if="token" :user="user"/>
-    <HeaderLogOut v-else/>
-
     <router-view></router-view>
-    <Footer/>
+    <Footer v-if="token">
   </div>
 </template>
 
 <script>
 import HeaderLogIn from "./components/HeaderLogIn";
-import HeaderLogOut from "./components/HeaderLogOut";
 import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
     HeaderLogIn,
-    HeaderLogOut,
     Footer
   },
   data() {
