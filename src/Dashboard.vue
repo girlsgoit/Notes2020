@@ -1,17 +1,19 @@
 <template>
-<div>
-  <Toolbar></Toolbar>
-  <section class="cards-section">
-    <div class="column">
-      <div class="card" @click="goToNote(element.id)" v-for="element in left_column_elements" :key="element.id">
-        <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
-        <p class="date">15 august</p>
+  <div>
+    <Toolbar></Toolbar>
+    <section class="cards-section">
+      <div class="column">
+        <div class="card" @click="goToNote(element.id)" v-for="element in left_column_elements" :key="element.id">
+          <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
+          <p class="date">15 august</p>
+        </div>
       </div>
 
-    <div class="column">
-      <div class="card" @click="goToNote(element.id)" v-for="element in right_column_elements" :key="element.id">
-        <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
-        <p class="date">15 august</p>
+      <div class="column">
+        <div class="card" @click="goToNote(element.id)" v-for="element in right_column_elements" :key="element.id">
+          <NoteElement :tag="element.note_elements[0].tag" :value="element.note_elements[0].content"/>
+          <p class="date">15 august</p>
+        </div>
       </div>
     </section>
   </div>
@@ -53,7 +55,7 @@ export default {
   },
   methods: {
     goToNote(noteId) {
-      this.$router.push(`/notes/${noteId}`)
+      this.$router.push(`/notes/${noteId}`);
     }
   }
 };
