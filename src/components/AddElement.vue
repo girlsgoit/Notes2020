@@ -36,15 +36,18 @@ export default {
       text: "",
       indexMod: 0,
       blocksMod: [],
-      isNewNote: false
+      isNewNote: false,
+      noteId: null,
     };
   },
-
+  created() {
+    console.log('created...', this.id)
+    this.noteId = this.id;
+  },
   methods: {
     save: function (tag, content) {
-      if (!this.id) {
-        this.isNewNote = true;
-      }
+      console.log('saved...', this.noteId)
+      this.isNewNote = !this.noteId;
 
       this.indexMod = this.index;
       this.blocksMod = this.blocks;
@@ -62,7 +65,7 @@ export default {
 
       axiosMethod(
         `https://notes-api.girlsgoit.org/notes/${
-          this.isNewNote ? "" : this.id + "/"
+          this.isNewNote ? "" : this.noteId + "/"
         }`,
         {
           note_elements: this.blocks
@@ -75,6 +78,8 @@ export default {
 
           if (this.isNewNote) {
             this.$router.push("/notes/" + response.data.id);
+            this.noteId = response.data.id;
+            this.$forceUpdate();
           }
         })
         .catch((error) => {
